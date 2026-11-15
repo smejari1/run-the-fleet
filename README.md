@@ -102,7 +102,6 @@ Python module.
 | Navigation Agent | `fleet/navigation.py`: Dijkstra on open roads, detours around closures |
 | Safety Agent | `fleet/safety.py`: independent check of every proposal before it runs |
 | Command Center | `server.py` + `web/` (map, controls, queue, Why?, Plan updates, comparison) |
-| Agronomy Agent (optional) | Not built |
 
 Other modules: `fleet/sim.py` (minute-tick simulation and events),
 `fleet/explain.py` (plain-language explanations), `fleet/metrics.py`
