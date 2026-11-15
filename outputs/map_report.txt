@@ -1,0 +1,20 @@
+Live field map - requested ahead of the remaining build phases
+
+Built: local Flask server with a lock-protected playback thread; SVG field
+map and all three labelled tractor icons; real road positions, planned
+routes, field work progress, fuel cards, selection details, and live metrics.
+Controls: Start/Pause, Step, Reset and speed. No additional dependencies.
+The scheduled T2 breakdown is shown with a red cross; no event-log panel.
+
+Checks: 41 tests passed. API tests verify eight fields/three tractors, actual
+movement, fuel use, reset, playback controls, invalid inputs, and an entire
+600-minute API run matching the existing CLI's exact metrics. Local HTTP
+health check: / returned 200; /api/state returned all three tractors.
+
+Browser inspection could not be performed: the browser access host reported
+unavailable and no browser surfaces were accessible. The map is served at
+http://127.0.0.1:5000 for the user to open directly.
+
+Scope: map and playback only. FCFS remains the dispatcher; this is not a
+claim that Phase 2 or all Phase 6 tasks are complete. Existing no-commit
+preference was retained. Simulation event files are not the primary UI.

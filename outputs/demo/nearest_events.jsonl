@@ -1,0 +1,79 @@
+{"details": {"dispatcher": "nearest", "seed": 17}, "t": 0, "type": "RUN_STARTED"}
+{"details": {}, "job": "J01", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J02", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J03", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J04", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J05", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J06", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J07", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J08", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J09", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J10", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J11", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J03", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J05", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 71.62672666666667, "est_start": 23.626726666666666, "explanation": {}, "route": ["DEPOT", "F1"]}, "job": "J03", "t": 0, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 94.36795000000001, "est_start": 27.701283333333336, "explanation": {}, "route": ["DEPOT", "F6"]}, "job": "J05", "t": 0, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"action": "REFUEL", "est_finish": 15.0, "est_start": 0.0, "explanation": {}, "route": ["DEPOT"]}, "t": 0, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "t": 0, "tractor": "agxt3", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 15.0, "tractor": "agxt3", "type": "REFUEL_FINISHED"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J04", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 159.75828142857142, "est_start": 69.75828142857142, "explanation": {}, "route": ["DEPOT", "F2"]}, "job": "J04", "t": 15, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J03", "t": 23.626726667, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {}, "job": "J05", "t": 27.701283333, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J12", "t": 30, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J04", "t": 69.758281429, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 12, "late": false}, "job": "J03", "t": 71.626726667, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J11", "t": 72, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 136.0, "est_start": 72.0, "explanation": {}, "route": ["F1"]}, "job": "J11", "t": 72, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "job": "J11", "t": 72, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 20, "late": false}, "job": "J05", "t": 94.36795, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J08", "t": 95, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 194.6950175, "est_start": 134.6950175, "explanation": {}, "route": ["F6", "F4"]}, "job": "J08", "t": 95, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"acres_done": 0, "message": "agxt2 BROKE DOWN; J08 paused at 0.0% (0/18 acres)"}, "job": "J08", "t": 100, "tractor": "agxt2", "type": "BREAKDOWN"}
+{"details": {"est_finish": 159.75828142857148, "route": ["F2"]}, "job": "J04", "t": 130, "tractor": "agxt3", "type": "REROUTED"}
+{"details": {"a": "F4", "b": "F7"}, "t": 130, "type": "BLOCK_ROUTE"}
+{"details": {"acres_done": 16, "late": false}, "job": "J11", "t": 136.0, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"acres_preserved": 0, "acres_remaining": 18, "from_tractor": "agxt2", "message": "agxt1 resumes J08: 18 acres remain; 0 completed acres were preserved."}, "job": "J08", "t": 136, "tractor": "agxt1", "type": "RECOVERY_ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 235.341462, "est_start": 163.341462, "explanation": {}, "route": ["F1", "F4"]}, "job": "J08", "t": 136, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"priority": 5}, "job": "J11", "t": 150, "type": "PRIORITY_CHANGED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J04", "t": 159.758281429, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J10", "t": 160, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 220.0, "est_start": 160.0, "explanation": {}, "route": ["F2"]}, "job": "J10", "t": 160, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J10", "t": 160, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {}, "job": "J08", "t": 163.341462, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 12, "late": false}, "job": "J10", "t": 220.0, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {}, "t": 220, "tractor": "agxt2", "type": "REPAIRED"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J02", "t": 220, "type": "AT_RISK"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J12", "t": 220, "type": "AT_RISK"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.", "warnings": ["At-risk job is planned to finish after its deadline."]}, "job": "J02", "t": 220, "tractor": "agxt2", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 348.6208408333333, "est_start": 268.6208408333333, "explanation": {}, "route": ["BREAKDOWN_agxt2_100", "F6", "F7"]}, "job": "J02", "t": 220, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.", "warnings": ["At-risk job is planned to finish after its deadline."]}, "job": "J12", "t": 220, "tractor": "agxt3", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 260.0, "est_start": 220.0, "explanation": {}, "route": ["F2"]}, "job": "J12", "t": 220, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J12", "t": 220, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J08", "t": 235.341462, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J07", "t": 236, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 337.0525153333333, "est_start": 273.0525153333333, "explanation": {}, "route": ["F4", "F5"]}, "job": "J07", "t": 236, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"acres_done": 8, "late": true}, "job": "J12", "t": 260.0, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J01", "t": 260, "type": "AT_RISK"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.", "warnings": ["At-risk job is planned to finish after its deadline."]}, "job": "J01", "t": 260, "tractor": "agxt3", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 418.63195357142854, "est_start": 328.63195357142854, "explanation": {}, "route": ["F2", "F5", "F8"]}, "job": "J01", "t": 260, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J02", "t": 268.620840833, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J07", "t": 273.052515333, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {}, "job": "J01", "t": 328.631953571, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 16, "late": false}, "job": "J07", "t": 337.052515333, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"action": "REFUEL", "est_finish": 416.26532, "est_start": 401.26532, "explanation": {}, "route": ["F5", "F4", "DEPOT"]}, "t": 338, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"acres_done": 24, "late": true}, "job": "J02", "t": 348.620840833, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J09", "t": 349, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 409.0, "est_start": 349.0, "explanation": {}, "route": ["F7"]}, "job": "J09", "t": 349, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {}, "job": "J09", "t": 349, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "t": 401.26532, "tractor": "agxt1", "type": "REFUEL_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J09", "t": 409.0, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "Nearest preserves travel ordering; planned lateness is permitted and reported."}, "job": "J06", "t": 409, "type": "AT_RISK"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.", "warnings": ["At-risk job is planned to finish after its deadline."]}, "job": "J06", "t": 409, "tractor": "agxt2", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 549.9222316666667, "est_start": 483.255565, "explanation": {}, "route": ["F7", "F3"]}, "job": "J06", "t": 409, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"fuel": 100}, "t": 416.26532, "tractor": "agxt1", "type": "REFUEL_FINISHED"}
+{"details": {"acres_done": 18, "late": true}, "job": "J01", "t": 418.631953571, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {}, "job": "J06", "t": 483.255565, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {"acres_done": 20, "late": true}, "job": "J06", "t": 549.922231667, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"completed": 12}, "t": 600, "type": "RUN_FINISHED"}

@@ -1,0 +1,79 @@
+{"details": {"dispatcher": "fcfs", "seed": 17}, "t": 0, "type": "RUN_STARTED"}
+{"details": {}, "job": "J01", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J02", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J03", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J04", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J05", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J06", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J07", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J08", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J09", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J10", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J11", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J01", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J02", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 165.66999800000002, "est_start": 93.669998, "explanation": {}, "route": ["DEPOT", "F4", "F5", "F8"]}, "job": "J01", "t": 0, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 151.32212416666667, "est_start": 71.32212416666667, "explanation": {}, "route": ["DEPOT", "F6", "F7"]}, "job": "J02", "t": 0, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"action": "REFUEL", "est_finish": 15.0, "est_start": 0.0, "explanation": {}, "route": ["DEPOT"]}, "t": 0, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "t": 0, "tractor": "agxt3", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 15.0, "tractor": "agxt3", "type": "REFUEL_FINISHED"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J03", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 100.31435, "est_start": 40.314350000000005, "explanation": {}, "route": ["DEPOT", "F1"]}, "job": "J03", "t": 15, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J12", "t": 30, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J03", "t": 40.31435, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {}, "job": "J02", "t": 71.322124167, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J01", "t": 93.669998, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 8.603362750000006, "message": "agxt2 BROKE DOWN; J02 paused at 35.8% (8.60336/24 acres)"}, "job": "J02", "t": 100, "tractor": "agxt2", "type": "BREAKDOWN"}
+{"details": {"acres_done": 12, "late": false}, "job": "J03", "t": 100.31435, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J04", "t": 101, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 231.15912214285714, "est_start": 141.15912214285714, "explanation": {}, "route": ["F1", "F2"]}, "job": "J04", "t": 101, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {"est_finish": 165.669998, "route": ["F8"]}, "job": "J01", "t": 130, "tractor": "agxt1", "type": "REROUTED"}
+{"details": {"a": "F4", "b": "F7"}, "t": 130, "type": "BLOCK_ROUTE"}
+{"details": {}, "job": "J04", "t": 141.159122143, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"priority": 5}, "job": "J11", "t": 150, "type": "PRIORITY_CHANGED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J01", "t": 165.669998, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"acres_preserved": 8.603362750000006, "acres_remaining": 15.396637249999994, "from_tractor": "agxt2", "message": "agxt1 resumes J02: 15.3966 acres remain; 8.60336 completed acres were preserved."}, "job": "J02", "t": 166, "tractor": "agxt1", "type": "RECOVERY_ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 273.8226583333333, "est_start": 212.23610933333333, "explanation": {}, "route": ["F8", "F7"]}, "job": "J02", "t": 166, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "job": "J02", "t": 212.236109333, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {}, "t": 220, "tractor": "agxt2", "type": "REPAIRED"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J05", "t": 220, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 330.2875075, "est_start": 263.6208408333333, "explanation": {}, "route": ["F7", "F6"]}, "job": "J05", "t": 220, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J04", "t": 231.159122143, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J07", "t": 232, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 348.05551285714284, "est_start": 268.05551285714284, "explanation": {}, "route": ["F2", "F5"]}, "job": "J07", "t": 232, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J05", "t": 263.620840833, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J07", "t": 268.055512857, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 24, "late": false}, "job": "J02", "t": 273.822658333, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J06", "t": 274, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 413.404452, "est_start": 333.404452, "explanation": {}, "route": ["F7", "F3"]}, "job": "J06", "t": 274, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"acres_done": 20, "late": false}, "job": "J05", "t": 330.2875075, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J08", "t": 331, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 430.6950175, "est_start": 370.6950175, "explanation": {}, "route": ["F6", "F4"]}, "job": "J08", "t": 331, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {}, "job": "J06", "t": 333.404452, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 16, "late": false}, "job": "J07", "t": 348.055512857, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J09", "t": 349, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 473.36003857142856, "est_start": 383.36003857142856, "explanation": {}, "route": ["F5", "F7"]}, "job": "J09", "t": 349, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J08", "t": 370.6950175, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J09", "t": 383.360038571, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 20, "late": false}, "job": "J06", "t": 413.404452, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"action": "REFUEL", "est_finish": 519.6717266666667, "est_start": 504.67172666666664, "explanation": {}, "route": ["F3", "F5", "F4", "DEPOT"]}, "t": 414, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J08", "t": 430.6950175, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J10", "t": 431, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 507.1804891666667, "est_start": 467.1804891666667, "explanation": {}, "route": ["F4", "F2"]}, "job": "J10", "t": 431, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {}, "job": "J10", "t": 467.180489167, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J09", "t": 473.360038571, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"action": "REFUEL", "est_finish": 550.1332492857143, "est_start": 535.1332492857143, "explanation": {}, "route": ["F7", "F6", "DEPOT"]}, "t": 474, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "t": 504.671726667, "tractor": "agxt1", "type": "REFUEL_STARTED"}
+{"details": {"acres_done": 12, "late": false}, "job": "J10", "t": 507.180489167, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J11", "t": 508, "type": "AT_RISK"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.; Estimated finish exceeds the shift horizon.", "warnings": ["At-risk job is planned to finish after its deadline.", "Estimated finish exceeds the shift horizon."]}, "job": "J11", "t": 508, "tractor": "agxt2", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 608.1856425000001, "est_start": 554.8523091666667, "explanation": {}, "route": ["F2", "F1"]}, "job": "J11", "t": 508, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"fuel": 100}, "t": 519.671726667, "tractor": "agxt1", "type": "REFUEL_FINISHED"}
+{"details": {"reason": "FCFS preserves submission order; planned lateness is permitted and reported."}, "job": "J12", "t": 520, "type": "AT_RISK"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.; Estimated finish exceeds the shift horizon.", "warnings": ["At-risk job is planned to finish after its deadline.", "Estimated finish exceeds the shift horizon."]}, "job": "J12", "t": 520, "tractor": "agxt1", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 603.1077293333333, "est_start": 571.1077293333333, "explanation": {}, "route": ["DEPOT", "F2"]}, "job": "J12", "t": 520, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "t": 535.133249286, "tractor": "agxt3", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 550.133249286, "tractor": "agxt3", "type": "REFUEL_FINISHED"}
+{"details": {}, "job": "J11", "t": 554.852309167, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J12", "t": 571.107729333, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"completed": 10}, "t": 600, "type": "RUN_FINISHED"}

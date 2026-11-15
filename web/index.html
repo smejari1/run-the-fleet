@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Run the Fleet · Field map</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Run the Fleet home"><span class="brand-icon">↗</span> RUN THE FLEET <span class="brand-tag">AGX</span></a>
+    <div class="connection"><i id="connection-dot"></i><span id="connection">Connecting…</span></div>
+  </header>
+  <main>
+    <section class="heading">
+      <div><p class="eyebrow">COMMAND CENTER / LIVE SIMULATION</p><h1>Your farm, in motion.</h1><p class="subtitle">Eight fields. Three tractors. One view of the whole operation.</p></div>
+      <div class="clock"><span>SHIFT PROGRESS</span><strong id="clock">00:00 <small>/ 10:00</small></strong><div class="shift-track"><div id="shift-progress"></div></div></div>
+    </section>
+    <div id="error" class="error" role="alert" hidden></div>
+    <section class="operations" aria-label="Farm job types"><span>FARM OPERATIONS</span><div id="job-types"></div></section>
+    <section class="workspace">
+      <div class="map-panel">
+        <div class="panel-head"><div><span class="live-dot"></span><h2>Field map</h2><span class="muted" id="map-count">8 fields</span></div><span class="pill" id="dispatcher-label">Coordinator</span></div>
+        <div class="map-wrap">
+          <svg id="farm-map" viewBox="0 0 1000 700" role="img" aria-label="Live farm map showing eight fields and tractors agxt1, agxt2 and agxt3">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#d8dfd1" stroke-width=".7"/></pattern>
+              <pattern id="furrows" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 0V10" stroke="#3c6739" stroke-width="1" opacity=".14"/></pattern>
+              <symbol id="tractor-symbol" viewBox="-20 -17 40 34"><rect x="-14" y="-13" width="10" height="7" rx="2" fill="#25352c"/><rect x="-14" y="6" width="10" height="7" rx="2" fill="#25352c"/><rect x="9" y="-11" width="7" height="5" rx="1.5" fill="#25352c"/><rect x="9" y="6" width="7" height="5" rx="1.5" fill="#25352c"/><rect x="-12" y="-8" width="27" height="16" rx="4" fill="currentColor" stroke="white" stroke-width="1.8"/><rect x="-9" y="-6" width="10" height="12" rx="2" fill="#eaf3f0" stroke="#25352c" stroke-width="1.5"/><path d="M5 -5V5M9 -5V5" stroke="white" stroke-opacity=".65" stroke-width="1.5"/></symbol>
+            </defs>
+            <rect width="1000" height="700" fill="#edf0e6"/>
+            <rect width="1000" height="700" fill="url(#grid)"/>
+            <g id="roads"></g><g id="routes"></g><g id="fields"></g><g id="depot"></g><g id="tractors"></g>
+            <g transform="translate(942 42)" fill="#6f7c6c" text-anchor="middle"><text font-size="12" y="-10">N</text><path d="M0 0L-6 17L0 13L6 17Z"/></g>
+            <text x="25" y="676" fill="#71806d" font-size="11" letter-spacing="1.4">SIMULATED FARM · 1 GRID UNIT ≈ 100 M</text>
+          </svg>
+          <div class="map-hint">Select a tractor or field to inspect it</div>
+        </div>
+        <div class="map-footer"><div class="legend"><span><i class="legend-field"></i> Fields</span><span><i class="legend-road"></i> Farm roads</span><span><i class="legend-route"></i> Planned routes</span><span><i class="legend-blocked"></i> Blocked</span></div><span id="playback-status">Paused</span></div>
+      </div>
+      <aside class="fleet-panel"><div class="panel-head"><h2>Your fleet</h2><span class="pill">3 tractors</span></div><div id="fleet-cards" class="fleet-cards"></div><div id="selection" class="selection"><p class="eyebrow">ON THE MAP</p><h3>A working view of your farm</h3><p>Follow each tractor along its colored route. Fields fill with green as work gets done.</p></div></aside>
+    </section>
+    <section class="control-bar" aria-label="Simulation playback controls">
+      <div class="playback"><button id="play" class="primary" disabled>▶ Start</button><button id="step" disabled>Step +1 min</button><button id="reset" disabled>↺ Reset</button></div>
+      <label class="speed-control" for="speed">Playback <input id="speed" type="range" min="1" max="30" value="4"><strong id="speed-label">4 min/s</strong></label>
+      <label class="dispatcher-control" for="dispatcher">Dispatcher <select id="dispatcher"><option value="coordinator">Coordinator</option><option value="fcfs">FCFS baseline</option><option value="nearest">Nearest feasible</option></select><span>applied on Reset</span></label>
+    </section>
+    <section class="stats" aria-label="Live operation metrics"><div><span>JOBS COMPLETED</span><strong id="jobs-completed">0 <small>/ 12</small></strong></div><div><span>ACRES WORKED</span><strong id="acres">0.0</strong></div><div><span>TRACTORS AVAILABLE</span><strong id="available">3 <small>/ 3</small></strong></div><div><span>TRAVEL · FLEET MINUTES</span><strong id="travel">0.0</strong></div></section>
+    <div id="operator-notice" class="operator-notice" role="status" aria-live="polite">Demo jobs loaded. Start playback or inject an event.</div>
+    <div class="safety-summary" role="status"><strong id="safety-active">Checking Safety Agent…</strong><span id="safety-rejections">Rejected proposals: 0</span><span id="safety-warnings">Warnings: 0</span><span>One active field job at a time</span></div>
+    <section class="operator-grid" aria-label="Operator controls">
+      <div class="operator-panel">
+        <div class="panel-head"><h2>Inject an event</h2><span class="pill">Manual only</span></div>
+        <div class="event-controls"><p>Choose when a tractor fails. Its completed acres are preserved and its unfinished job returns to the queue.</p>
+          <label for="event-tractor">Tractor<select id="event-tractor"></select></label>
+          <div class="event-buttons"><button id="breakdown" class="danger">Break down tractor</button><button id="repair">Repair tractor</button></div>
+          <span class="form-note">There are no automatic breakdowns in the default demo.</span>
+        </div>
+      </div>
+      <div class="road-panel operator-panel">
+      <div class="panel-head"><h2>Road controls</h2><span class="pill" id="road-count">All roads open</span></div>
+      <div class="road-controls"><label for="event-road">Road<select id="event-road"></select></label><div class="event-buttons"><button id="block-road" class="danger" disabled>Block road</button><button id="reopen-road" disabled>Reopen road</button></div><p>Tractors take the shortest open alternative. A tractor already on a road finishes that segment first. Detours must leave enough fuel for work, return, and reserve.</p></div>
+      </div>
+    </section>
+    <section class="queue-panel">
+      <div class="panel-head"><h2>Job queue</h2><div><span id="queue-count" class="muted"></span><label class="queue-filter" for="queue-filter">Show <select id="queue-filter"><option value="open">Open jobs</option><option value="all">All jobs</option><option value="done">Completed</option></select></label></div></div>
+      <div class="priority-controls"><label for="priority-job">Change pending priority<select id="priority-job"></select></label><label for="priority-value">New priority<select id="priority-value"><option value="1">1 · Low</option><option value="2">2 · Normal</option><option value="3">3 · Important</option><option value="4">4 · High</option><option value="5" selected>5 · Urgent</option></select></label><button id="apply-priority" disabled>Apply priority</button><span>Active jobs continue without interruption.</span></div>
+      <div class="table-scroll"><table class="job-table"><thead><tr><th>Job</th><th>Operation</th><th>Field</th><th>Priority</th><th>Deadline · shift</th><th>Tractor</th><th>Progress</th><th>Status / recovery</th></tr></thead><tbody id="job-rows"></tbody></table></div>
+    </section>
+    <section class="explain-panel">
+      <div class="panel-head"><div><h2>Plan updates</h2><span class="muted">What the coordinator decided, and why</span></div><span class="pill">Live</span></div>
+      <div class="explain-body"><div id="why-panel" class="why-panel" hidden></div><ol id="plan-feed" class="plan-feed"><li class="plan-empty">Press Start. Every assignment, breakdown and re-plan is explained here. Click <strong>Why?</strong> on any job in the queue for its full reasoning.</li></ol></div>
+    </section>
+    <section class="comparison-panel">
+      <div class="panel-head"><div><h2>Three-way comparison</h2><span class="muted">Coordinator · FCFS · Nearest feasible</span></div><button id="compare">Run comparison</button></div>
+      <div class="comparison-body"><p id="comparison-note">Replay the full shift with all three dispatchers, including every job, breakdown, and road closure added so far. This does not change your live run.</p><a class="download-replay" href="/api/replay" download>Download this session’s replay</a><div id="comparison-results" class="table-scroll" hidden></div></div>
+    </section>
+    <footer>HACK ARIZONA · AGX <span>Own simulation · Live positions and progress</span></footer>
+  </main>
+</body>
+</html>

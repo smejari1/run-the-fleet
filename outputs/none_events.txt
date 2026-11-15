@@ -1,0 +1,15 @@
+[t=0]  RUN_STARTED: {"dispatcher": "none", "seed": 17}
+[t=0] J01 JOB_SUBMITTED: {}
+[t=0] J02 JOB_SUBMITTED: {}
+[t=0] J03 JOB_SUBMITTED: {}
+[t=0] J04 JOB_SUBMITTED: {}
+[t=0] J05 JOB_SUBMITTED: {}
+[t=0] J06 JOB_SUBMITTED: {}
+[t=0] J07 JOB_SUBMITTED: {}
+[t=0] J08 JOB_SUBMITTED: {}
+[t=0] J09 JOB_SUBMITTED: {}
+[t=0] J10 JOB_SUBMITTED: {}
+[t=0] J11 JOB_SUBMITTED: {}
+[t=30] J12 JOB_SUBMITTED: {}
+[t=180] agxt2 BREAKDOWN: agxt2 BROKE DOWN; no active job
+[t=600]  RUN_FINISHED: {"completed": 0}

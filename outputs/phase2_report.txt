@@ -1,0 +1,63 @@
+Phase 2 implementation - coordinator, comparison and interactive operation
+
+Built:
+- Exact joint matching of idle tractors, with on-time/assignment cardinality
+  preceding score. Equipment, capability, routes, fuel and return reserve
+  are checked. Busy-tractor and refuelling projections guide risk flags.
+- Deadline/priority scoring, soon-free tractor holding, late fallback,
+  and refuelling. Final weights: late=10, priority=8, urgency=30000.
+  Hold limit=20 minutes, minimum score saving=10.
+- Fair FCFS/coordinator replay, percentages, real-number summary, and logs.
+- Live Add a job form and queue with progress, tractor, priority and risk.
+- Manual breakdown and repair controls; no scheduled default breakdowns.
+- Dispatcher selection on Reset; browser comparison; downloadable replay.
+
+Checks:
+- 61 tests passed, including exact joint assignment, nearer matching,
+  deadline/priority preference, compatibility, holding, and fuel planning.
+- Atomic rejection of invalid job batches; submission while paused;
+  injected mid-work breakdown preserves acres; repair and reassignment.
+- A complete operator session with a queued job, breakdown, and repair
+  replays to the exact same coordinator metrics, including same-minute order.
+- Complete map JavaScript parsed successfully.
+- Live server API: queued J13, advanced to minute 40, broke working agxt1,
+  repaired it, compared three recorded actions, then reset to 12 demo jobs
+  at minute zero. Confirmed zero scheduled breakdown events.
+- git diff --check checked before handoff.
+
+Actual default comparison (600-minute horizon, 12 jobs, zero events):
+Metric                         FCFS           Coordinator
+jobs_completed                 12             12
+jobs_on_time                   11             11
+deadline_misses                1              1
+priority_weighted_on_time      21             21
+acres_completed                200            200
+travel_minutes                 609.996283     590.742302
+idle_minutes                   189.660238     243.857923
+makespan                       548.107729     553.866742
+safety_violations              0              0
+duplicate_or_lost_work          0              0
+
+Travel improved 3.16%; idle increased 28.58%. Completion and on-time counts
+are tied. The original benchmark gate requiring an improvement in completed
+or on-time jobs as well as travel is NOT met on this updated scenario. The
+requested software and interactive controls are implemented; do not claim
+the stronger benchmark gate was achieved. Report this limitation honestly.
+
+Assumptions/decisions:
+- Default scenario jobs, deadlines and roads were kept; only the automatic
+  breakdown was removed as requested. Operator actions are interactive.
+- Same-time operator actions retain batch order after regular dispatch.
+- Queue submissions and breakdowns apply immediately, including while paused.
+- No additional dependencies. Only standard-library scheduling/routing.
+- Reset/restart clears in-memory actions; download the replay to preserve them.
+
+Known limits:
+- Full independent Safety Agent/collision checks and assignment explanation
+  work remain later phases. Zero counters do not certify those future checks.
+- Browser access host was unavailable in earlier attempts; UI syntax and
+  real HTTP behavior are verified, without a visual browser verification.
+- Prior commit approval was declined; changes remain uncommitted.
+
+Next: Phase 3 - broader recovery and invariant hardening, after the user's
+go-ahead. The unmet benchmark gate remains explicitly documented.

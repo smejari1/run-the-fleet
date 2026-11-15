@@ -1,0 +1,1087 @@
+{
+  "scenarios": 20,
+  "runs": 60,
+  "failed_runs": 0,
+  "results": [
+    {
+      "seed": 0,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 31,
+        "travel_minutes": 57.33976,
+        "idle_minutes": 19.086922,
+        "makespan": 40.77185,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 0,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 23,
+        "acres_completed": 31,
+        "travel_minutes": 62.89762,
+        "idle_minutes": 60.611901,
+        "makespan": 56.405774,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 0,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 31,
+        "travel_minutes": 41.064546,
+        "idle_minutes": 47.173175,
+        "makespan": 43.661238,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 1,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 35,
+        "travel_minutes": 60.65786,
+        "idle_minutes": 53.103573,
+        "makespan": 52.710585,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 1,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 35,
+        "travel_minutes": 71.765731,
+        "idle_minutes": 56.646527,
+        "makespan": 62.079987,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 1,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 35,
+        "travel_minutes": 82.939378,
+        "idle_minutes": 34.170832,
+        "makespan": 56.079987,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 2,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 20,
+        "acres_completed": 31,
+        "travel_minutes": 110.40448,
+        "idle_minutes": 47.211151,
+        "makespan": 70.063901,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 2,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 25,
+        "acres_completed": 31,
+        "travel_minutes": 83.421433,
+        "idle_minutes": 6.496082,
+        "makespan": 46.050309,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 2,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 25,
+        "acres_completed": 31,
+        "travel_minutes": 80.048177,
+        "idle_minutes": 27.52329,
+        "makespan": 46.050309,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 3,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 20,
+        "acres_completed": 28,
+        "travel_minutes": 62.00448,
+        "idle_minutes": 26.740217,
+        "makespan": 39.958526,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 3,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 20,
+        "acres_completed": 28,
+        "travel_minutes": 62.00448,
+        "idle_minutes": 26.740217,
+        "makespan": 39.958526,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 3,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 20,
+        "acres_completed": 28,
+        "travel_minutes": 46.425239,
+        "idle_minutes": 37.723918,
+        "makespan": 36.967735,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 4,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 26,
+        "travel_minutes": 63.057464,
+        "idle_minutes": 44.166097,
+        "makespan": 50.778638,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 4,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 26,
+        "travel_minutes": 63.057464,
+        "idle_minutes": 44.166097,
+        "makespan": 50.778638,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 4,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 23,
+        "acres_completed": 26,
+        "travel_minutes": 54.824556,
+        "idle_minutes": 25.153082,
+        "makespan": 39.153486,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 5,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 22,
+        "travel_minutes": 101.065763,
+        "idle_minutes": 23.344582,
+        "makespan": 54.574567,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 5,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 22,
+        "travel_minutes": 101.065763,
+        "idle_minutes": 23.344582,
+        "makespan": 54.574567,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 5,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 22,
+        "travel_minutes": 71.812512,
+        "idle_minutes": 34.960057,
+        "makespan": 46.477672,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 6,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 35,
+        "travel_minutes": 111.094273,
+        "idle_minutes": 34.526409,
+        "makespan": 65.69204,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 6,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 35,
+        "travel_minutes": 112.718931,
+        "idle_minutes": 36.739535,
+        "makespan": 67.42379,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 6,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 21,
+        "acres_completed": 35,
+        "travel_minutes": 55.297493,
+        "idle_minutes": 46.715356,
+        "makespan": 47.071778,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 7,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 38,
+        "travel_minutes": 101.066977,
+        "idle_minutes": 56.080366,
+        "makespan": 73.546066,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 7,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 38,
+        "travel_minutes": 101.066977,
+        "idle_minutes": 56.080366,
+        "makespan": 73.546066,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 7,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 38,
+        "travel_minutes": 50.273095,
+        "idle_minutes": 50.170008,
+        "makespan": 51.383807,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 8,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 15,
+        "acres_completed": 32,
+        "travel_minutes": 160.611913,
+        "idle_minutes": 71.87456,
+        "makespan": 95.644731,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 8,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 15,
+        "acres_completed": 32,
+        "travel_minutes": 118.748051,
+        "idle_minutes": 7.621921,
+        "makespan": 59.634778,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 8,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 20,
+        "acres_completed": 32,
+        "travel_minutes": 105.00556,
+        "idle_minutes": 22.380116,
+        "makespan": 56.850867,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 9,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 11,
+        "acres_completed": 25,
+        "travel_minutes": 90.654619,
+        "idle_minutes": 14.652438,
+        "makespan": 48.527048,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 3
+    },
+    {
+      "seed": 9,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 16,
+        "acres_completed": 25,
+        "travel_minutes": 53.874512,
+        "idle_minutes": 23.861322,
+        "makespan": 38.858671,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 9,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 16,
+        "acres_completed": 25,
+        "travel_minutes": 52.882717,
+        "idle_minutes": 33.854812,
+        "makespan": 40.8157,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 10,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 22,
+        "acres_completed": 36,
+        "travel_minutes": 64.137956,
+        "idle_minutes": 21.14242,
+        "makespan": 39.789047,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 10,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 22,
+        "acres_completed": 36,
+        "travel_minutes": 91.360488,
+        "idle_minutes": 19.130317,
+        "makespan": 53.04172,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 10,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 26,
+        "acres_completed": 36,
+        "travel_minutes": 65.022019,
+        "idle_minutes": 13.3837,
+        "makespan": 36.361968,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 11,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 40,
+        "travel_minutes": 109.458333,
+        "idle_minutes": 33.133287,
+        "makespan": 71.224144,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 3
+    },
+    {
+      "seed": 11,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 40,
+        "travel_minutes": 94.754496,
+        "idle_minutes": 39.734727,
+        "makespan": 63.992494,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 11,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 17,
+        "acres_completed": 40,
+        "travel_minutes": 76.353916,
+        "idle_minutes": 90.821017,
+        "makespan": 74.721141,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 12,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 27,
+        "travel_minutes": 94.801697,
+        "idle_minutes": 4.022011,
+        "makespan": 39.00142,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 12,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 27,
+        "travel_minutes": 79.434289,
+        "idle_minutes": 6.092404,
+        "makespan": 39.00142,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 12,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 27,
+        "travel_minutes": 83.557042,
+        "idle_minutes": 69.032821,
+        "makespan": 61.856781,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 13,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 25,
+        "acres_completed": 34,
+        "travel_minutes": 46.917318,
+        "idle_minutes": 43.092376,
+        "makespan": 43.65049,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 13,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 25,
+        "acres_completed": 34,
+        "travel_minutes": 46.917318,
+        "idle_minutes": 43.092376,
+        "makespan": 43.65049,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 13,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 25,
+        "acres_completed": 34,
+        "travel_minutes": 33.254152,
+        "idle_minutes": 44.625993,
+        "makespan": 35.893513,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 14,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 28,
+        "travel_minutes": 67.851532,
+        "idle_minutes": 11.378639,
+        "makespan": 39.8039,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 14,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 28,
+        "travel_minutes": 67.851532,
+        "idle_minutes": 11.378639,
+        "makespan": 39.8039,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 14,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 19,
+        "acres_completed": 28,
+        "travel_minutes": 69.424293,
+        "idle_minutes": 9.726392,
+        "makespan": 40.395328,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 15,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 21,
+        "acres_completed": 29,
+        "travel_minutes": 111.26556,
+        "idle_minutes": 26.793377,
+        "makespan": 64.117209,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 15,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 16,
+        "acres_completed": 29,
+        "travel_minutes": 117.138028,
+        "idle_minutes": 79.392524,
+        "makespan": 83.474321,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 15,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 21,
+        "acres_completed": 29,
+        "travel_minutes": 60.608745,
+        "idle_minutes": 29.066303,
+        "makespan": 46.530587,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 16,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 6,
+        "deadline_misses": 2,
+        "priority_weighted_on_time": 23,
+        "acres_completed": 31,
+        "travel_minutes": 90.689512,
+        "idle_minutes": 19.567324,
+        "makespan": 52.646601,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 2
+    },
+    {
+      "seed": 16,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 27,
+        "acres_completed": 31,
+        "travel_minutes": 64.603388,
+        "idle_minutes": 3.704456,
+        "makespan": 26.941695,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 16,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 28,
+        "acres_completed": 31,
+        "travel_minutes": 48.13499,
+        "idle_minutes": 7.964562,
+        "makespan": 27.047832,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 17,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 31,
+        "travel_minutes": 86.416713,
+        "idle_minutes": 7.801592,
+        "makespan": 43.529502,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 17,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 27,
+        "acres_completed": 31,
+        "travel_minutes": 80.432059,
+        "idle_minutes": 5.24155,
+        "makespan": 40.679676,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 17,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 31,
+        "travel_minutes": 81.267034,
+        "idle_minutes": 53.317788,
+        "makespan": 56.828962,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 18,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 26,
+        "acres_completed": 36,
+        "travel_minutes": 67.841739,
+        "idle_minutes": 3.748521,
+        "makespan": 38.412976,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 18,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 7,
+        "deadline_misses": 1,
+        "priority_weighted_on_time": 23,
+        "acres_completed": 36,
+        "travel_minutes": 53.153715,
+        "idle_minutes": 5.959188,
+        "makespan": 34.252928,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 1
+    },
+    {
+      "seed": 18,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 26,
+        "acres_completed": 36,
+        "travel_minutes": 47.143525,
+        "idle_minutes": 19.744355,
+        "makespan": 36.252962,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 19,
+      "dispatcher": "fcfs",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 43,
+        "travel_minutes": 102.179226,
+        "idle_minutes": 41.47725,
+        "makespan": 65.655084,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 19,
+      "dispatcher": "nearest",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 43,
+        "travel_minutes": 73.193531,
+        "idle_minutes": 12.088582,
+        "makespan": 46.468493,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    },
+    {
+      "seed": 19,
+      "dispatcher": "coordinator",
+      "error": null,
+      "metrics": {
+        "jobs_completed": 8,
+        "jobs_on_time": 8,
+        "deadline_misses": 0,
+        "priority_weighted_on_time": 24,
+        "acres_completed": 43,
+        "travel_minutes": 77.702502,
+        "idle_minutes": 63.504893,
+        "makespan": 64.736443,
+        "safety_violations": 0,
+        "duplicate_or_lost_work": 0
+      },
+      "warnings": 0
+    }
+  ]
+}

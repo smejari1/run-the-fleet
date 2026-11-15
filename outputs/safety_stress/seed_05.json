@@ -1,0 +1,189 @@
+{
+  "seed": 5,
+  "horizon": 120,
+  "refuel_minutes": 5,
+  "fields": [
+    {
+      "id": "F0",
+      "name": "Field 0",
+      "x": 16.326738982463144,
+      "y": 19.061100752996776,
+      "acres": 20
+    },
+    {
+      "id": "F1",
+      "name": "Field 1",
+      "x": 20.289452008011022,
+      "y": 23.67635652687216,
+      "acres": 20
+    },
+    {
+      "id": "F2",
+      "name": "Field 2",
+      "x": 19.017667219018406,
+      "y": 23.21347492330459,
+      "acres": 20
+    },
+    {
+      "id": "F3",
+      "name": "Field 3",
+      "x": 2.667120250523139,
+      "y": 12.709321050696422,
+      "acres": 20
+    }
+  ],
+  "tractors": [
+    {
+      "id": "T0",
+      "name": "Tractor 0",
+      "implements": [
+        "plow",
+        "sprayer"
+      ],
+      "capabilities": [
+        "rtk"
+      ],
+      "speed": 1.9433567169983137,
+      "fuel": 25,
+      "burn_travel": 0.2946923659410773,
+      "burn_work": 0.4702701475251868,
+      "work_rate": 0.7905647717225155
+    },
+    {
+      "id": "T1",
+      "name": "Tractor 1",
+      "implements": [
+        "sprayer",
+        "planter"
+      ],
+      "capabilities": [],
+      "speed": 1.4690690477821637,
+      "fuel": 60,
+      "burn_travel": 0.1739718497859491,
+      "burn_work": 0.3631282577707792,
+      "work_rate": 1.1591529503424807
+    },
+    {
+      "id": "T2",
+      "name": "Tractor 2",
+      "implements": [
+        "plow",
+        "planter"
+      ],
+      "capabilities": [
+        "rtk"
+      ],
+      "speed": 1.0131141895889022,
+      "fuel": 100,
+      "burn_travel": 0.16501894013915447,
+      "burn_work": 0.2838447098033331,
+      "work_rate": 1.4330762974468416
+    }
+  ],
+  "jobs": [
+    {
+      "id": "J0",
+      "type": "plow",
+      "field": "F3",
+      "requires_implement": "plow",
+      "priority": 2,
+      "deadline": 34,
+      "submitted_at": 0,
+      "acres_total": 2
+    },
+    {
+      "id": "J1",
+      "type": "sprayer",
+      "field": "F3",
+      "requires_implement": "sprayer",
+      "priority": 2,
+      "deadline": 41,
+      "submitted_at": 0,
+      "acres_total": 1
+    },
+    {
+      "id": "J2",
+      "type": "planter",
+      "field": "F0",
+      "requires_implement": "planter",
+      "priority": 2,
+      "deadline": 52,
+      "submitted_at": 0,
+      "acres_total": 2
+    },
+    {
+      "id": "J3",
+      "type": "plow",
+      "field": "F1",
+      "requires_implement": "plow",
+      "priority": 3,
+      "deadline": 65,
+      "submitted_at": 0,
+      "acres_total": 2
+    },
+    {
+      "id": "J4",
+      "type": "sprayer",
+      "field": "F1",
+      "requires_implement": "sprayer",
+      "priority": 2,
+      "deadline": 113,
+      "submitted_at": 0,
+      "acres_total": 2
+    },
+    {
+      "id": "J5",
+      "type": "planter",
+      "field": "F2",
+      "requires_implement": "planter",
+      "priority": 1,
+      "deadline": 71,
+      "submitted_at": 17,
+      "acres_total": 4
+    },
+    {
+      "id": "J6",
+      "type": "plow",
+      "field": "F1",
+      "requires_implement": "plow",
+      "priority": 3,
+      "deadline": 33,
+      "submitted_at": 10,
+      "acres_total": 3
+    },
+    {
+      "id": "J7",
+      "type": "sprayer",
+      "field": "F0",
+      "requires_implement": "sprayer",
+      "priority": 5,
+      "deadline": 111,
+      "submitted_at": 14,
+      "acres_total": 6
+    }
+  ],
+  "events": [
+    {
+      "type": "breakdown",
+      "tractor": "T0",
+      "at": 24
+    },
+    {
+      "type": "repair",
+      "tractor": "T0",
+      "at": 36
+    },
+    {
+      "type": "block_route",
+      "a": "F0",
+      "b": "F3",
+      "at": 16
+    },
+    {
+      "type": "unblock_route",
+      "a": "F0",
+      "b": "F3",
+      "at": 31
+    }
+  ]
+}

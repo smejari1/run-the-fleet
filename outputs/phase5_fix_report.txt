@@ -1,0 +1,40 @@
+Phase 5 explanation flow repair
+
+Root cause observed on the running server:
+GET /api/why/J01 and GET /api/explanations both returned HTTP 404 even though
+the routes existed on disk. The server was still running the previous code.
+The frontend hid Why panels on failed requests and swallowed feed failures,
+which made the feature appear to do nothing.
+
+Changes:
+- Restarted the verified local map server with the current explanation code.
+- Why opens visibly with Loading, reports failures, and provides Retry.
+- Request ids and session generation prevent older responses overwriting a
+  newer job, reopening a closed panel, or restoring a pre-reset explanation.
+- Feed failures are visible and continue retrying; successful updates resume.
+- Explanation responses include generation/time and use Cache-Control no-store.
+- Scheduled jobs have a specific release-time explanation while paused.
+- FCFS and Nearest explanations state their actual ordering policies.
+- Fuel is captured at dispatch and reported as a historical snapshot.
+- Removed the unsupported assertion that no tractor can meet a late job's
+  deadline. The text now reports the chosen plan's lateness without claiming
+  global infeasibility or optimality.
+- Road updates report the actual path/ETA, including reopening and waiting
+  states, instead of always describing every route change as a detour.
+
+Verification:
+- Full regression suite: 163 passed in 10.84 seconds.
+- Eleven explanation tests cover API availability while paused, generation,
+  reset, dispatch-time fuel, scheduled jobs, both baselines, recovery and roads.
+- Frontend behavior checks passed for visible 404 + Retry, rapid successive
+  job clicks (latest wins), Close during a pending request, and feed failure.
+- Full dashboard JavaScript parsed successfully.
+- Actual running server: /api/why/J01 HTTP 200; /api/explanations returned
+  three initial feed items while paused. Nearest mode was preserved and its
+  policy was returned as the first explanation line.
+- Browser access host is unavailable, so real-browser visual inspection
+  could not be performed; UI behavior checks and real HTTP were verified.
+
+Prior session replay saved as outputs/session_before_phase5_fix.json before
+the restart. No dependencies added; existing planner behavior retained.
+Prior uncommitted work and unrelated files were preserved.

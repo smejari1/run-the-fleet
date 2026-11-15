@@ -1,0 +1,28 @@
+Map and scenario update requested by the user
+
+Eight fields now occupy an irregular spread across the center and perimeter.
+The map framing is expanded to use more of its canvas. Twenty-one explicit
+roads give every location at least four connections. Dijkstra still uses
+actual road lengths; closing any one road leaves an alternate path.
+
+Default tractor ids and names: agxt1, agxt2, agxt3.
+Default jobs: plowing, irrigation, fertilizing, harvesting, planting, spraying.
+Each operation occurs twice and is supported by two tractors. The scheduled
+breakdown now references agxt2. The operation types are visible above the map.
+
+Checks: 42 tests passed, including alternate routes for each individual road
+closure and the map's full 600-minute run matching the CLI. Live API reset
+confirmed eight fields, 21 roads, the three new names, and all six operations.
+Browser visual inspection remains unavailable because the browser access
+host could not be reached. Refresh the map page to load its updated assets.
+
+Regenerated outputs/fcfs_metrics.json and both dispatchers' event logs.
+Current FCFS: 9/12 jobs complete, 8 on time, 4 deadline misses,
+162.914635 acres complete, 630.340036 fleet travel minutes,
+7.001426 fleet idle minutes, last completion at minute 552.212805.
+Zero work-ledger consistency errors. Independent Safety Agent still planned.
+
+The original phase0_report.txt, phase1_report.txt and map_report.txt are
+historical checkpoints predating this scenario update. Their old metrics
+and tractor names describe the prior scenario, not the current demo.
+No new dependencies or commits.

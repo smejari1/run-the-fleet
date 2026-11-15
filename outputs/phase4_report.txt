@@ -1,0 +1,73 @@
+Phase 4 complete - independent assignment safety
+
+Built:
+- fleet/safety.py independently validates every proposed assignment before
+  the simulator mutates job or tractor state. No scheduling/scoring happens
+  inside the validator.
+- Checks tractor availability, job ownership/state/submission, implements,
+  capabilities, route endpoints/roads/closures, physical travel/work estimates,
+  finite fuel, work plus depot-return fuel and reserve, and field overlap.
+- Late work requires an explicit at-risk flag and generates a warning.
+  Beyond-horizon finishes generate warnings. Warnings and rejections differ.
+- Rejected proposals are not applied; their reasons are logged and counted.
+  Dispatch retries exclude the rejected pair and are bounded. Exclusions are
+  cleared at the next decision, so repaired/reopened opportunities can retry.
+- All three dispatchers reserve fields during active jobs (including travel).
+  Arrival checks and work-history invariants provide additional protection.
+- Dashboard shows independent safety status, rejected proposals and warnings;
+  the comparison includes actual rejected-proposal counts.
+
+Current planner preservation:
+The existing rolling-horizon sequence planner, plan weights, local search and
+first-step dispatch were retained. Safety work added first-step field
+reservations and retry exclusions. No pair-scoring replacement was made.
+Older same-field parallel test fixtures were moved to distinct fields so
+their work-balancing/unique-ownership intent remains valid under collision
+constraints. benchmark.py and other unrelated work were left untouched.
+
+Checks:
+- 152 tests passed in 10.26 seconds.
+- Deliberately invalid assignments rejected for the expected reasons:
+  unavailable/broken/unknown tractors, invalid/held/done jobs, incompatible
+  equipment/capabilities, bad/blocked roads, insufficient/nonfinite fuel,
+  fabricated times, overlapping field work and invalid refuelling.
+- Exact reserve boundary, actual proposed-route fuel, at-risk/horizon warnings,
+  retry exclusion, stubborn-proposer termination and same-field serialization.
+- Twenty seeded randomized scenarios, all three dispatchers: 60/60 passed.
+  Zero rejected proposals and zero invariant failures over those runs.
+  Exact inputs and outcomes: outputs/safety_stress/report.json and seed files.
+- Full dashboard JavaScript parsed successfully. Live HTTP check confirmed
+  safety enabled and zero rejections for FCFS, nearest and coordinator.
+- git diff --check passed. No extra dependencies installed.
+
+Regenerated default comparison (same 12 jobs, no injected events):
+Metric                 FCFS          Nearest       Coordinator
+Completed jobs         12            12            12
+On-time jobs           11            10            11
+Travel minutes         609.996283    546.935958    489.958878
+Idle minutes           189.660238    211.740703    23.874327
+Last completion        548.107729    530.669998    448.055513
+Safety rejections      0             0             0
+Work consistency errors 0            0             0
+
+Manual failure replays in outputs/recovery/ and outputs/recovery_180/ were
+also regenerated with the current planner and independent checks.
+
+Assumptions/limits:
+- Field reservation is deliberately conservative: no other job is dispatched
+  to that field until its active job ends, even if estimated work windows
+  could otherwise be non-overlapping. This avoids delays creating conflicts.
+- Collision protection models field work, not road-traffic spacing.
+- Baseline policies can declare planned late work at risk; lateness remains
+  measured as deadline misses rather than being hidden as a safety failure.
+- Seeded tests cover the reported scenarios, not every possible farm state.
+- Full explanations remain Phase 5. No claim of global planner optimality.
+- Prior declined commit preference retained; changes remain uncommitted.
+
+Server handoff:
+Prior live replay saved to outputs/session_before_phase4.json before restart.
+Verified server at http://127.0.0.1:5000: Coordinator, paused at minute zero,
+Safety Agent enabled, zero rejected proposals. Refresh assets with Ctrl+F5.
+Browser visual inspection unavailable; syntax and live API verified.
+
+Next: Phase 5 - assignment and replanning explanations, after user's go-ahead.

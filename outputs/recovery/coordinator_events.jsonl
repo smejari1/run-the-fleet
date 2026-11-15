@@ -1,0 +1,93 @@
+{"details": {"dispatcher": "coordinator", "seed": 17}, "t": 0, "type": "RUN_STARTED"}
+{"details": {}, "job": "J01", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J02", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J03", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J04", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J05", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J06", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J07", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J08", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J09", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J10", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {}, "job": "J11", "t": 0, "type": "JOB_SUBMITTED"}
+{"details": {"reason": "Planned for agxt1, est. finish 04:32, 28 min before the 05:00 deadline."}, "job": "J01", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt1, est. finish 02:33, 147 min before the 05:00 deadline."}, "job": "J02", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 01:40, 150 min before the 04:10 deadline."}, "job": "J03", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 04:52, 8 min before the 05:00 deadline."}, "job": "J04", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 05:02, 147 min before the 07:30 deadline."}, "job": "J05", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt1, est. finish 06:29, 60 min before the 07:30 deadline."}, "job": "J06", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 06:48, 42 min before the 07:30 deadline."}, "job": "J07", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 01:32, 407 min before the 08:20 deadline."}, "job": "J08", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 06:46, 143 min before the 09:10 deadline."}, "job": "J09", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 03:21, 349 min before the 09:10 deadline."}, "job": "J10", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 03:00, 409 min before the 09:50 deadline."}, "job": "J11", "t": 0, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 153.05769933333332, "est_start": 57.057699333333325, "explanation": {"alternatives": [{"est_finish": 151.3, "free_in": 0, "tractor": "agxt2"}], "at_risk": false, "deadline_slack": 146.94230066666668, "priority": 2, "queue": ["J02", "J01", "J06"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt3"}], "score": null, "travel_minutes": 57.057699333333325}, "route": ["DEPOT", "F6", "F7"]}, "job": "J02", "t": 0, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 92.76600583333334, "est_start": 32.76600583333333, "explanation": {"alternatives": [{"est_finish": 98.2, "free_in": 0, "tractor": "agxt1"}], "at_risk": false, "deadline_slack": 407.23399416666666, "priority": 2, "queue": ["J08", "J11", "J05", "J09"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt3"}], "score": null, "travel_minutes": 32.76600583333333}, "route": ["DEPOT", "F4"]}, "job": "J08", "t": 0, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"action": "REFUEL", "est_finish": 15.0, "est_start": 0.0, "explanation": {"next_job": "J03", "reason": "Refuel first so agxt3 can safely do J03"}, "route": ["DEPOT"]}, "t": 0, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "t": 0, "tractor": "agxt3", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 15.0, "tractor": "agxt3", "type": "REFUEL_FINISHED"}
+{"details": {"reason": "Planned for agxt3, est. finish 03:51, 69 min before the 05:00 deadline."}, "job": "J04", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 03:19, 251 min before the 07:30 deadline."}, "job": "J05", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 07:24, 5 min before the 07:30 deadline."}, "job": "J06", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 05:48, 102 min before the 07:30 deadline."}, "job": "J07", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt2, est. finish 05:03, 246 min before the 09:10 deadline."}, "job": "J09", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 07:25, 105 min before the 09:10 deadline."}, "job": "J10", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt1, est. finish 07:11, 158 min before the 09:50 deadline."}, "job": "J11", "t": 15, "type": "RISK_CLEARED"}
+{"details": {"action": "JOB", "est_finish": 100.31435, "est_start": 40.314350000000005, "explanation": {"alternatives": [{"est_finish": 261.5, "free_in": 139, "tractor": "agxt1"}], "at_risk": false, "deadline_slack": 149.68565, "priority": 2, "queue": ["J03", "J04", "J07", "J10"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt2"}], "score": null, "travel_minutes": 25.314350000000005}, "route": ["DEPOT", "F1"]}, "job": "J03", "t": 15, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J12", "t": 30, "type": "JOB_SUBMITTED"}
+{"details": {"reason": "Planned for agxt3, est. finish 04:32, 28 min before the 05:00 deadline."}, "job": "J04", "t": 30, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 07:28, 2 min before the 07:30 deadline."}, "job": "J07", "t": 30, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 05:32, 218 min before the 09:10 deadline."}, "job": "J10", "t": 30, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 03:01, 81 min after the 01:40 deadline."}, "job": "J12", "t": 30, "type": "AT_RISK"}
+{"details": {}, "job": "J08", "t": 32.766005833, "tractor": "agxt2", "type": "WORK_STARTED"}
+{"details": {}, "job": "J03", "t": 40.31435, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {}, "job": "J02", "t": 57.057699333, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J08", "t": 92.766005833, "tractor": "agxt2", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 199.3616841666667, "est_start": 132.6950175, "explanation": {"alternatives": [{"est_finish": 248.1, "free_in": 8, "tractor": "agxt3"}], "at_risk": false, "deadline_slack": 250.6383158333333, "priority": 3, "queue": ["J05", "J09", "J06"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt1"}], "score": null, "travel_minutes": 39.695017500000006}, "route": ["F4", "F6"]}, "job": "J05", "t": 93, "tractor": "agxt2", "type": "ASSIGNED"}
+{"details": {"acres_done": 0, "message": "agxt2 BROKE DOWN; J05 paused at 0.0% (0/20 acres)"}, "job": "J05", "t": 100, "tractor": "agxt2", "type": "BREAKDOWN"}
+{"details": {"reason": "Planned for agxt3, est. finish 11:28, 239 min after the 07:30 deadline. That is past the end of the shift, so it may not be finished today."}, "job": "J05", "t": 100, "type": "AT_RISK"}
+{"details": {"reason": "Planned for agxt1, est. finish 11:33, 243 min after the 07:30 deadline. That is past the end of the shift, so it may not be finished today."}, "job": "J06", "t": 100, "type": "AT_RISK"}
+{"details": {"reason": "Planned for agxt1, est. finish 06:07, 83 min before the 07:30 deadline."}, "job": "J07", "t": 100, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt3, est. finish 08:07, 62 min before the 09:10 deadline."}, "job": "J09", "t": 100, "type": "RISK_CLEARED"}
+{"details": {"reason": "Planned for agxt1, est. finish 08:54, 55 min before the 09:50 deadline."}, "job": "J11", "t": 100, "type": "RISK_CLEARED"}
+{"details": {"cause": "agxt2 broke down", "from_tractor": "agxt2", "reason": "Because agxt2 broke down, J05 moved from agxt2 to agxt3.", "to_tractor": "agxt3"}, "job": "J05", "t": 100, "type": "REPLAN"}
+{"details": {"cause": "agxt2 broke down", "from_tractor": "agxt2", "reason": "Because agxt2 broke down, J06 moved from agxt2 to agxt1.", "to_tractor": "agxt1"}, "job": "J06", "t": 100, "type": "REPLAN"}
+{"details": {"cause": "agxt2 broke down", "from_tractor": "agxt3", "reason": "Because agxt2 broke down, J07 moved from agxt3 to agxt1.", "to_tractor": "agxt1"}, "job": "J07", "t": 100, "type": "REPLAN"}
+{"details": {"cause": "agxt2 broke down", "from_tractor": "agxt2", "reason": "Because agxt2 broke down, J09 moved from agxt2 to agxt3.", "to_tractor": "agxt3"}, "job": "J09", "t": 100, "type": "REPLAN"}
+{"details": {"acres_done": 12, "late": false}, "job": "J03", "t": 100.31435, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.", "warnings": ["At-risk job is planned to finish after its deadline."]}, "job": "J12", "t": 101, "tractor": "agxt3", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 181.15912214285714, "est_start": 141.15912214285714, "explanation": {"alternatives": [{"est_finish": 247.1, "free_in": 53, "tractor": "agxt1"}], "at_risk": true, "deadline_slack": -81.15912214285714, "priority": 5, "queue": ["J12", "J04", "J10", "J09", "J05"], "rejected": [{"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 40.15912214285714}, "route": ["F1", "F2"]}, "job": "J12", "t": 101, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J12", "t": 141.159122143, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 24, "late": false}, "job": "J02", "t": 153.057699333, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 272.23610933333333, "est_start": 200.23610933333333, "explanation": {"alternatives": [{"est_finish": 340.6, "free_in": 28, "tractor": "agxt3"}], "at_risk": false, "deadline_slack": 27.76389066666667, "priority": 1, "queue": ["J01", "J07", "J11", "J06"], "rejected": [{"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 46.23610933333333}, "route": ["F7", "F8"]}, "job": "J01", "t": 154, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {"acres_done": 8, "late": true}, "job": "J12", "t": 181.159122143, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 272.0, "est_start": 182.0, "explanation": {"alternatives": [], "at_risk": false, "deadline_slack": 28.0, "priority": 2, "queue": ["J04", "J10", "J09", "J05"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt1"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 0.0}, "route": ["F2"]}, "job": "J04", "t": 182, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J04", "t": 182, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {}, "job": "J01", "t": 200.236109333, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J04", "t": 272.0, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 332.0, "est_start": 272.0, "explanation": {"alternatives": [], "at_risk": false, "deadline_slack": 218.0, "priority": 1, "queue": ["J10", "J09", "J05"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt1"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 0.0}, "route": ["F2"]}, "job": "J10", "t": 272, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J10", "t": 272, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J01", "t": 272.236109333, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 367.404678, "est_start": 303.404678, "explanation": {"alternatives": [{"est_finish": 448.1, "free_in": 59, "tractor": "agxt3"}], "at_risk": false, "deadline_slack": 82.59532200000001, "priority": 2, "queue": ["J07", "J11", "J06"], "rejected": [{"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 30.40467799999999}, "route": ["F8", "F5"]}, "job": "J07", "t": 273, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "job": "J07", "t": 303.404678, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 12, "late": false}, "job": "J10", "t": 332.0, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"action": "JOB", "est_finish": 487.51266142857145, "est_start": 397.51266142857145, "explanation": {"alternatives": [], "at_risk": false, "deadline_slack": 62.48733857142855, "priority": 3, "queue": ["J09", "J05"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt1"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 65.51266142857145}, "route": ["F2", "F4", "F7"]}, "job": "J09", "t": 332, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {"acres_done": 16, "late": false}, "job": "J07", "t": 367.404678, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"action": "REFUEL", "est_finish": 446.26532, "est_start": 431.26532, "explanation": {"next_job": "J11", "reason": "Refuel first so agxt1 can safely do J11"}, "route": ["F5", "F4", "DEPOT"]}, "t": 368, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "job": "J09", "t": 397.512661429, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {}, "t": 431.26532, "tractor": "agxt1", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 446.26532, "tractor": "agxt1", "type": "REFUEL_FINISHED"}
+{"details": {"action": "JOB", "est_finish": 534.6267266666666, "est_start": 470.6267266666667, "explanation": {"alternatives": [], "at_risk": false, "deadline_slack": 55.37327333333337, "priority": 2, "queue": ["J11", "J06"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt3"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 23.626726666666684}, "route": ["DEPOT", "F1"]}, "job": "J11", "t": 447, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "job": "J11", "t": 470.626726667, "tractor": "agxt1", "type": "WORK_STARTED"}
+{"details": {"acres_done": 18, "late": false}, "job": "J09", "t": 487.512661429, "tractor": "agxt3", "type": "JOB_DONE"}
+{"details": {"action": "REFUEL", "est_finish": 564.1332492857143, "est_start": 549.1332492857143, "explanation": {"next_job": "J05", "reason": "Refuel first so agxt3 can safely do J05"}, "route": ["F7", "F6", "DEPOT"]}, "t": 488, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {"acres_done": 16, "late": false}, "job": "J11", "t": 534.626726667, "tractor": "agxt1", "type": "JOB_DONE"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.; Estimated finish exceeds the shift horizon.", "warnings": ["At-risk job is planned to finish after its deadline.", "Estimated finish exceeds the shift horizon."]}, "job": "J06", "t": 535, "tractor": "agxt1", "type": "SAFETY_WARNING"}
+{"details": {"action": "JOB", "est_finish": 693.066464, "est_start": 613.066464, "explanation": {"alternatives": [], "at_risk": true, "deadline_slack": -243.066464, "priority": 1, "queue": ["J06"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt3"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 78.066464}, "route": ["F1", "F2", "F3"]}, "job": "J06", "t": 535, "tractor": "agxt1", "type": "ASSIGNED"}
+{"details": {}, "t": 549.133249286, "tractor": "agxt3", "type": "REFUEL_STARTED"}
+{"details": {"fuel": 100}, "t": 564.133249286, "tractor": "agxt3", "type": "REFUEL_FINISHED"}
+{"details": {"message": "At-risk job is planned to finish after its deadline.; Estimated finish exceeds the shift horizon.", "warnings": ["At-risk job is planned to finish after its deadline.", "Estimated finish exceeds the shift horizon."]}, "job": "J05", "t": 565, "tractor": "agxt3", "type": "SAFETY_WARNING"}
+{"details": {"acres_preserved": 0, "acres_remaining": 20, "from_tractor": "agxt2", "message": "agxt3 resumes J05: 20 acres remain; 0 completed acres were preserved."}, "job": "J05", "t": 565, "tractor": "agxt3", "type": "RECOVERY_ASSIGNED"}
+{"details": {"action": "JOB", "est_finish": 688.7439571428572, "est_start": 588.7439571428572, "explanation": {"alternatives": [], "at_risk": true, "deadline_slack": -238.7439571428572, "priority": 3, "queue": ["J05"], "rejected": [{"reason": "missing required implement or capability", "tractor": "agxt1"}, {"reason": "broken down", "tractor": "agxt2"}], "score": null, "travel_minutes": 23.743957142857198}, "route": ["DEPOT", "F6"]}, "job": "J05", "t": 565, "tractor": "agxt3", "type": "ASSIGNED"}
+{"details": {}, "job": "J05", "t": 588.743957143, "tractor": "agxt3", "type": "WORK_STARTED"}
+{"details": {"completed": 10}, "t": 600, "type": "RUN_FINISHED"}

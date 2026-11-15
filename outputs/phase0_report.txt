@@ -1,0 +1,28 @@
+Phase 0 complete - simulation foundation
+
+Built: validated domain models and JSON scenarios; Dijkstra navigation;
+minute-tick simulation with fractional travel/work/fuel; event queue;
+breakdown progress preservation; JSONL and readable event logs; no-op CLI.
+
+Requirements: local .venv with Flask 3.1.3 and pytest 9.2.0.
+Only standard-library modules are used by the simulation.
+Installed versions, including transitive packages: requirements-lock.txt.
+
+Checks: python -m pytest -q -p no:cacheprovider: 18 passed.
+python -m pip check: No broken requirements found.
+python run_sim.py --scenario scenarios/default.json --dispatcher none:
+reached minute 600; 3 tractors, 8 fields, 12 pending jobs; T2 BROKEN at 180.
+Event logs: outputs/none_events.txt and outputs/none_events.jsonl.
+
+Assumptions: fractional travel/work inside minute ticks; dispatch only at
+integer boundaries; completions before same-time external events; stable
+event insertion order; no random decisions; entered roads may be exited
+after closure. The README records these conventions.
+
+Known limits: no-op dispatcher intentionally schedules nothing. Independent
+safety checks, coordinator, explanations and dashboard belong to later phases.
+
+Next: Phase 1 - FCFS, already authorized by the user's current request.
+
+Commit status: local Git checkpoint was attempted but its approval was
+declined. Files remain uncommitted; no commit was created.

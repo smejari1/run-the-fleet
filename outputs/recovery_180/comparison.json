@@ -1,0 +1,182 @@
+{
+  "fcfs": {
+    "jobs_completed": 9,
+    "jobs_on_time": 8,
+    "deadline_misses": 4,
+    "priority_weighted_on_time": 14,
+    "acres_completed": 162.914635,
+    "travel_minutes": 630.340036,
+    "idle_minutes": 7.001426,
+    "makespan": 552.212805,
+    "safety_violations": 0,
+    "duplicate_or_lost_work": 0
+  },
+  "nearest": {
+    "jobs_completed": 10,
+    "jobs_on_time": 8,
+    "deadline_misses": 4,
+    "priority_weighted_on_time": 16,
+    "acres_completed": 181.818883,
+    "travel_minutes": 556.199725,
+    "idle_minutes": 4.145725,
+    "makespan": 554.671727,
+    "safety_violations": 0,
+    "duplicate_or_lost_work": 0
+  },
+  "coordinator": {
+    "jobs_completed": 10,
+    "jobs_on_time": 9,
+    "deadline_misses": 3,
+    "priority_weighted_on_time": 19,
+    "acres_completed": 168,
+    "travel_minutes": 615.083719,
+    "idle_minutes": 7.568772,
+    "makespan": 534.626727,
+    "safety_violations": 0,
+    "duplicate_or_lost_work": 0
+  },
+  "changes": {
+    "jobs_completed": {
+      "difference": 1,
+      "percent": 11.11
+    },
+    "jobs_on_time": {
+      "difference": 1,
+      "percent": 12.5
+    },
+    "deadline_misses": {
+      "difference": -1,
+      "percent": -25.0
+    },
+    "priority_weighted_on_time": {
+      "difference": 5,
+      "percent": 35.71
+    },
+    "acres_completed": {
+      "difference": 5.085365,
+      "percent": 3.12
+    },
+    "travel_minutes": {
+      "difference": -15.256317,
+      "percent": -2.42
+    },
+    "idle_minutes": {
+      "difference": 0.567346,
+      "percent": 8.1
+    },
+    "makespan": {
+      "difference": -17.586078,
+      "percent": -3.18
+    },
+    "safety_violations": {
+      "difference": 0,
+      "percent": 0
+    },
+    "duplicate_or_lost_work": {
+      "difference": 0,
+      "percent": 0
+    }
+  },
+  "baseline_changes": {
+    "fcfs": {
+      "jobs_completed": {
+        "difference": 1,
+        "percent": 11.11
+      },
+      "jobs_on_time": {
+        "difference": 1,
+        "percent": 12.5
+      },
+      "deadline_misses": {
+        "difference": -1,
+        "percent": -25.0
+      },
+      "priority_weighted_on_time": {
+        "difference": 5,
+        "percent": 35.71
+      },
+      "acres_completed": {
+        "difference": 5.085365,
+        "percent": 3.12
+      },
+      "travel_minutes": {
+        "difference": -15.256317,
+        "percent": -2.42
+      },
+      "idle_minutes": {
+        "difference": 0.567346,
+        "percent": 8.1
+      },
+      "makespan": {
+        "difference": -17.586078,
+        "percent": -3.18
+      },
+      "safety_violations": {
+        "difference": 0,
+        "percent": 0
+      },
+      "duplicate_or_lost_work": {
+        "difference": 0,
+        "percent": 0
+      }
+    },
+    "nearest": {
+      "jobs_completed": {
+        "difference": 0,
+        "percent": 0.0
+      },
+      "jobs_on_time": {
+        "difference": 1,
+        "percent": 12.5
+      },
+      "deadline_misses": {
+        "difference": -1,
+        "percent": -25.0
+      },
+      "priority_weighted_on_time": {
+        "difference": 3,
+        "percent": 18.75
+      },
+      "acres_completed": {
+        "difference": -13.818883,
+        "percent": -7.6
+      },
+      "travel_minutes": {
+        "difference": 58.883994,
+        "percent": 10.59
+      },
+      "idle_minutes": {
+        "difference": 3.423047,
+        "percent": 82.57
+      },
+      "makespan": {
+        "difference": -20.045,
+        "percent": -3.61
+      },
+      "safety_violations": {
+        "difference": 0,
+        "percent": 0
+      },
+      "duplicate_or_lost_work": {
+        "difference": 0,
+        "percent": 0
+      }
+    }
+  },
+  "summary": "All three dispatchers replayed the same 12 initial jobs and 1 operator/scenario events. Completed jobs: FCFS 9, nearest 10, coordinator 10; on time: 8, 8, and 9 respectively. Fleet travel minutes in that order: 630.34, 556.20, and 615.08. Fleet idle minutes: 7.00, 4.15, and 7.57. These are measured outcomes, not a guarantee that the coordinator wins every metric.",
+  "weights": {
+    "undone": 5000.0,
+    "late_fixed": 1500.0,
+    "late_prio": 200.0,
+    "late_min": 2.0,
+    "finish": 0.05,
+    "travel": 1.0,
+    "idle": 2.0
+  },
+  "input": {
+    "initial_jobs": 12,
+    "events": 1,
+    "horizon": 600,
+    "seed": 17
+  }
+}

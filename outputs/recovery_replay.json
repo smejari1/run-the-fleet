@@ -1,0 +1,361 @@
+{
+  "_notes": "Own simulation. Fixed irregular field positions fill the map, including its interior; resets preserve the same scenario. Twenty-one undirected roads give every node at least four connections and multiple alternative routes. The six operations each occur twice. Every implement is available on two tractors. agxt3 starts at 22% fuel; Breakdowns are manual operator actions only; none are scheduled. A priority-5 fertilizing job arrives at minute 30. All metrics must be regenerated after this scenario update.",
+  "depot": {
+    "x": 6,
+    "y": 48
+  },
+  "edges": [
+    {
+      "a": "DEPOT",
+      "b": "F1",
+      "length": 35.44009
+    },
+    {
+      "a": "DEPOT",
+      "b": "F2",
+      "length": 76.661594
+    },
+    {
+      "a": "DEPOT",
+      "b": "F4",
+      "length": 39.319207
+    },
+    {
+      "a": "DEPOT",
+      "b": "F6",
+      "length": 33.24154
+    },
+    {
+      "a": "F1",
+      "b": "F2",
+      "length": 56.222771
+    },
+    {
+      "a": "F1",
+      "b": "F4",
+      "length": 41.012193
+    },
+    {
+      "a": "F1",
+      "b": "F6",
+      "length": 66.007575
+    },
+    {
+      "a": "F2",
+      "b": "F3",
+      "length": 60.876925
+    },
+    {
+      "a": "F2",
+      "b": "F4",
+      "length": 43.416587
+    },
+    {
+      "a": "F2",
+      "b": "F5",
+      "length": 50.477718
+    },
+    {
+      "a": "F3",
+      "b": "F5",
+      "length": 41.10961
+    },
+    {
+      "a": "F3",
+      "b": "F7",
+      "length": 89.106678
+    },
+    {
+      "a": "F3",
+      "b": "F8",
+      "length": 55.226805
+    },
+    {
+      "a": "F4",
+      "b": "F5",
+      "length": 55.578773
+    },
+    {
+      "a": "F4",
+      "b": "F6",
+      "length": 47.634021
+    },
+    {
+      "a": "F4",
+      "b": "F7",
+      "length": 48.301139
+    },
+    {
+      "a": "F5",
+      "b": "F7",
+      "length": 48.104054
+    },
+    {
+      "a": "F5",
+      "b": "F8",
+      "length": 45.607017
+    },
+    {
+      "a": "F6",
+      "b": "F7",
+      "length": 52.345009
+    },
+    {
+      "a": "F6",
+      "b": "F8",
+      "length": 121.004132
+    },
+    {
+      "a": "F7",
+      "b": "F8",
+      "length": 69.354164
+    }
+  ],
+  "events": [
+    {
+      "at": 100,
+      "operator_batch": 1,
+      "tractor": "agxt2",
+      "type": "breakdown"
+    }
+  ],
+  "fields": [
+    {
+      "acres": 25,
+      "id": "F1",
+      "name": "North Orchard",
+      "x": 16,
+      "y": 14
+    },
+    {
+      "acres": 25,
+      "id": "F2",
+      "name": "Creek Meadow",
+      "x": 72,
+      "y": 9
+    },
+    {
+      "acres": 30,
+      "id": "F3",
+      "name": "East Alfalfa",
+      "x": 131,
+      "y": 24
+    },
+    {
+      "acres": 30,
+      "id": "F4",
+      "name": "East Pasture",
+      "x": 45,
+      "y": 43
+    },
+    {
+      "acres": 25,
+      "id": "F5",
+      "name": "West Hay",
+      "x": 100,
+      "y": 51
+    },
+    {
+      "acres": 30,
+      "id": "F6",
+      "name": "West Cotton",
+      "x": 15,
+      "y": 80
+    },
+    {
+      "acres": 30,
+      "id": "F7",
+      "name": "South Corn",
+      "x": 67,
+      "y": 86
+    },
+    {
+      "acres": 30,
+      "id": "F8",
+      "name": "South Meadow",
+      "x": 136,
+      "y": 79
+    }
+  ],
+  "horizon": 600,
+  "jobs": [
+    {
+      "acres_total": 18,
+      "deadline": 300,
+      "field": "F8",
+      "id": "J01",
+      "priority": 1,
+      "requires_implement": "sprayer",
+      "submitted_at": 0,
+      "type": "spraying"
+    },
+    {
+      "acres_total": 24,
+      "deadline": 300,
+      "field": "F7",
+      "id": "J02",
+      "priority": 2,
+      "requires_implement": "plow",
+      "submitted_at": 0,
+      "type": "plowing"
+    },
+    {
+      "acres_total": 12,
+      "deadline": 250,
+      "field": "F1",
+      "id": "J03",
+      "priority": 2,
+      "requires_implement": "fertilizer_spreader",
+      "submitted_at": 0,
+      "type": "fertilizing"
+    },
+    {
+      "acres_total": 18,
+      "deadline": 300,
+      "field": "F2",
+      "id": "J04",
+      "priority": 2,
+      "requires_implement": "irrigator",
+      "submitted_at": 0,
+      "type": "irrigation"
+    },
+    {
+      "acres_total": 20,
+      "deadline": 450,
+      "field": "F6",
+      "id": "J05",
+      "priority": 3,
+      "requires_implement": "planter",
+      "submitted_at": 0,
+      "type": "planting"
+    },
+    {
+      "acres_total": 20,
+      "deadline": 450,
+      "field": "F3",
+      "id": "J06",
+      "priority": 1,
+      "requires_implement": "harvester",
+      "submitted_at": 0,
+      "type": "harvesting"
+    },
+    {
+      "acres_total": 16,
+      "deadline": 450,
+      "field": "F5",
+      "id": "J07",
+      "priority": 2,
+      "requires_implement": "sprayer",
+      "submitted_at": 0,
+      "type": "spraying"
+    },
+    {
+      "acres_total": 18,
+      "deadline": 500,
+      "field": "F4",
+      "id": "J08",
+      "priority": 2,
+      "requires_implement": "plow",
+      "submitted_at": 0,
+      "type": "plowing"
+    },
+    {
+      "acres_total": 18,
+      "deadline": 550,
+      "field": "F7",
+      "id": "J09",
+      "priority": 3,
+      "requires_implement": "planter",
+      "submitted_at": 0,
+      "type": "planting"
+    },
+    {
+      "acres_total": 12,
+      "deadline": 550,
+      "field": "F2",
+      "id": "J10",
+      "priority": 1,
+      "requires_implement": "irrigator",
+      "submitted_at": 0,
+      "type": "irrigation"
+    },
+    {
+      "acres_total": 16,
+      "deadline": 590,
+      "field": "F1",
+      "id": "J11",
+      "priority": 2,
+      "requires_implement": "harvester",
+      "submitted_at": 0,
+      "type": "harvesting"
+    },
+    {
+      "acres_total": 8,
+      "deadline": 100,
+      "field": "F2",
+      "id": "J12",
+      "priority": 5,
+      "requires_capabilities": [
+        "rtk"
+      ],
+      "requires_implement": "fertilizer_spreader",
+      "submitted_at": 30,
+      "type": "fertilizing"
+    }
+  ],
+  "refuel_minutes": 15,
+  "seed": 17,
+  "tractors": [
+    {
+      "burn_travel": 0.12,
+      "burn_work": 0.25,
+      "capabilities": [
+        "rtk"
+      ],
+      "fuel": 100,
+      "id": "agxt1",
+      "implements": [
+        "plow",
+        "fertilizer_spreader",
+        "sprayer",
+        "harvester"
+      ],
+      "name": "agxt1",
+      "speed": 1.5,
+      "work_rate": 0.25
+    },
+    {
+      "burn_travel": 0.1,
+      "burn_work": 0.22,
+      "fuel": 100,
+      "id": "agxt2",
+      "implements": [
+        "plow",
+        "irrigator",
+        "harvester",
+        "planter"
+      ],
+      "name": "agxt2",
+      "speed": 1.2,
+      "work_rate": 0.3
+    },
+    {
+      "burn_travel": 0.1,
+      "burn_work": 0.2,
+      "capabilities": [
+        "rtk"
+      ],
+      "fuel": 22,
+      "id": "agxt3",
+      "implements": [
+        "irrigator",
+        "fertilizer_spreader",
+        "planter",
+        "sprayer"
+      ],
+      "name": "agxt3",
+      "speed": 1.4,
+      "work_rate": 0.2
+    }
+  ]
+}

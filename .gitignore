@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated structured simulation logs (force-add final hand-in logs).
+outputs/*.jsonl
+
+# Local agent instructions.
+AGENTS.md

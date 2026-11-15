@@ -1,0 +1,42 @@
+Pre-Phase 3 update: manual roads and nearest-feasible baseline
+
+Built:
+- Road selection with Block road/Reopen road buttons; blocked roads are red
+  and dashed. Road actions apply immediately and are saved in replay inputs.
+- Navigation finds the shortest open alternative; paths and ETAs update.
+- A tractor already on a segment finishes it before stopping or continuing.
+  No teleporting. Future segments avoid closures. Work, return-trip fuel,
+  and reserve are rechecked. Unsafe/unreachable jobs return to pending;
+  available tractors can refuel, and reopening triggers another decision.
+- Greedy nearest-feasible baseline with shared equipment/capability/route/
+  fuel constraints. Tractors by id; lowest travel time wins; ties by original
+  submission time and job id. No priority/deadline ranking or joint matching.
+- Dashboard selector and comparison now support FCFS, nearest, coordinator.
+  Percentage differences are provided against both baselines.
+
+Checks:
+- 79 tests passed, including all three dispatchers on detours, mid-road
+  closures without teleporting, fuel-infeasible detours, disconnected paths,
+  reopening, progress preservation, and live replay matching.
+- Complete map JavaScript parsed successfully.
+- Live API: blocking DEPOT-F1 rerouted agxt1 via DEPOT-F4-F1, moving for five
+  ticks preserved the route state, reopening succeeded, and comparison
+  included both road events across all three algorithms.
+- Nearest dispatcher was selected successfully via Reset; final state was
+  reset to Coordinator, paused at minute zero, with no injected test actions.
+- Browser visual inspection unavailable; actual HTTP and syntax verified.
+
+Measured default run (same 12 jobs, no events):
+Metric                 FCFS          Nearest       Coordinator
+Completed jobs         12            12            12
+On-time jobs           11            8             11
+Travel minutes         609.996283    615.002711    590.742302
+Idle minutes           189.660238    192.673950    243.857923
+Work ledger errors     0             0             0
+
+The coordinator saves 3.16% travel vs FCFS and 3.94% vs nearest. It has
+more on-time jobs than nearest but ties FCFS, and has more idle time than
+both. No claim of global optimality. Independent Safety Agent still pending.
+
+No dependencies added. Prior uncommitted state retained. Phase 3's broader
+recovery hardening is not claimed complete by this pre-phase update.

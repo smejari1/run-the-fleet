@@ -1,0 +1,12 @@
+{
+  "jobs_completed": 0,
+  "jobs_on_time": 0,
+  "deadline_misses": 12,
+  "priority_weighted_on_time": 0,
+  "acres_completed": 0,
+  "travel_minutes": 0,
+  "idle_minutes": 1380.0,
+  "makespan": null,
+  "safety_violations": 0,
+  "duplicate_or_lost_work": 0
+}

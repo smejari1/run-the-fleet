@@ -1,0 +1,14 @@
+{
+  "_notes": "Two compatible tractors; T1 loses power after five acres. T2 can finish the remainder.",
+  "seed": 0,
+  "horizon": 40,
+  "depot": {"x": 0, "y": 0},
+  "fields": [{"id": "F1", "name": "Test Meadow", "x": 5, "y": 0, "acres": 20}],
+  "edges": [{"a": "DEPOT", "b": "F1", "length": 5}],
+  "tractors": [
+    {"id": "T1", "name": "One", "implements": ["mower"], "speed": 1, "work_rate": 1},
+    {"id": "T2", "name": "Two", "implements": ["mower"], "speed": 1, "work_rate": 1}
+  ],
+  "jobs": [{"id": "J1", "type": "mow", "field": "F1", "requires_implement": "mower", "priority": 1, "deadline": 40, "submitted_at": 0, "acres_total": 20}],
+  "events": [{"type": "breakdown", "tractor": "T1", "at": 10}]
+}

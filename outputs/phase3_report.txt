@@ -1,0 +1,66 @@
+Phase 3 complete - recovery and invariant hardening
+
+Built:
+- Recovery history records who stopped, preserved acres, remaining acres,
+  who resumed, and reassignment time. Work history remains the acres ledger.
+- Orphaned jobs return to pending without changing original submission age,
+  priority, or deadline. All pending work is reconsidered immediately.
+- No compatible non-broken tractor: job remains pending and at risk with a
+  RECOVERY_WAITING entry. Repair permits recovery at the physical location.
+- Shared invariant checks cover ownership, active states, complete work,
+  completion lists/times, fuel bounds and non-overlapping work history.
+- Invariant failures are logged; the live app pauses and requests Reset.
+- Queue shows awaiting/resumed recovery status and preserved-work tooltip.
+- Operator can change submitted pending-job priorities without preempting
+  active work; these actions are captured in deterministic replay.
+
+Checks:
+- 98 tests passed. Repeated failures/repairs tested on all three dispatchers.
+- Mid-road failures preserve position; unworked acres are not invented.
+- The only compatible tractor can fail and later repair without losing work.
+- Completed work cannot be reassigned or recorded twice. Deliberately corrupt
+  ledgers, duplicate owners, overlaps and unknown completions are detected.
+- Full queue JavaScript parsed successfully. Live API exposes recovery
+  records and priority controls; observed live consistency error count was 0.
+- Manual replay comparisons were regenerated; default demo still has no
+  automatic breakdowns. git diff --check passed.
+
+Minute-180 manual-breakdown replay (same event timeline for all dispatchers):
+Metric                 FCFS          Nearest       Coordinator
+Completed jobs         9             10            10
+On-time jobs           8             7             9
+Travel minutes         630.340036    585.130399    618.970115
+Idle minutes           7.001426      5.935658      5.163134
+Work consistency errors 0            0             0
+
+Actual recovery excerpts:
+FCFS: t=180 agxt2 J05 stops with 0/20 acres; at t=232 agxt3 resumes 20 acres.
+Nearest: t=180 agxt2 J08 stops at 75.5%, 13.5915/18 acres; t=206 agxt1 resumes
+4.40851 remaining acres.
+Coordinator: t=180 agxt2 J09 stops at 46.7%, 8.4/18 acres; t=449 agxt3 resumes
+9.6 remaining acres. The preserved 8.4 acres are not repeated.
+
+Replay: outputs/recovery_replay_180.json
+Detailed comparison/logs: outputs/recovery_180/
+Additional minute-100 stress replay: outputs/recovery_replay.json and
+outputs/recovery/. That case leaves a late orphaned job pending in the
+coordinator at the horizon; progress remains tracked, with no work lost.
+
+Assumptions/decisions:
+- Recovery is not an automatic priority boost. Feasibility and the selected
+  scheduling policy still apply; reassignment can wait for a suitable tractor.
+- Current event/tick ordering and all three dispatchers' scoring rules remain.
+- No dependencies added. Default automatic breakdowns remain disabled.
+- Before the server update, the finished user session's two operator actions
+  were saved in outputs/session_before_phase3.json. The live session was
+  subsequently in use; it was not reset at handoff.
+
+Known limits:
+- The coordinator is not guaranteed to win every metric or finish every
+  pending job within the shift. Both recorded stress cases are retained.
+- Independent Safety Agent and collision checks are Phase 4. Full assignment
+  explanations are Phase 5, not implemented as part of this phase.
+- Browser visual inspection unavailable; syntax, real API, and automated
+  behavior verified. Prior declined commit preference retained: uncommitted.
+
+Next: Phase 4 - independent assignment safety, after the user's go-ahead.

@@ -1,0 +1,49 @@
+Phase 1 complete - first-come, first-served baseline
+
+Built:
+- FCFS dispatcher ordered by submitted_at and job id, tractors by id.
+- Implement/capability, reachability, and fuel/reserve filters.
+- Depot refuelling only when it enables pending work.
+- Single-source metrics and CLI output in JSON, JSONL and readable text.
+- Baseline ownership, timing, reproducibility and recovery tests.
+
+Checks:
+- python -m pytest -q -p no:cacheprovider: 31 passed in 0.12 seconds.
+- python run_sim.py --scenario scenarios/default.json --dispatcher fcfs:
+  reached minute 600 and generated outputs/fcfs_events.* and fcfs_metrics.json.
+- git diff --check: passed.
+- Dependency check: No broken requirements found.
+
+Actual default-scenario metrics:
+jobs_completed: 8 of 12
+jobs_on_time: 6
+deadline_misses: 6
+priority_weighted_on_time: 12
+acres_completed: 140.191649
+travel_minutes: 714.140194
+idle_minutes: 5.891883
+makespan: 484.138649
+safety_violations: 0 (independent Safety Agent is not implemented until Phase 4)
+duplicate_or_lost_work: 0
+
+Recovery excerpt:
+[t=180] T2 J02 BREAKDOWN: J02 paused at 73.7% (17.698/24 acres).
+[t=306] T1 assigned the remaining J02 work.
+[t=371.207972894] T1 J02 JOB_DONE: 24 total acres; late=true.
+
+Assumptions/decisions:
+- The existing README had no implementation; Phase 0 was a prerequisite.
+- Only Flask and pytest are direct external dependencies. Simulation and
+  routing use the standard library. Exact installed versions are locked.
+- FCFS intentionally ignores deadlines and priority when ranking work.
+- Travel/idle metrics sum across tractors. Idle excludes BROKEN and REFUELING.
+- Late or unfinished jobs count as deadline misses. Partial acres count.
+
+Known issues/limits:
+- The only rake tractor breaks down, leaving J04 pending; FCFS does not
+  overcome missing equipment. Four jobs remain unfinished at the horizon.
+- Independent assignment safety, explanations, and dashboard are later phases.
+- The required local phase commit was declined by the user. No commits were
+  made and all implementation files remain uncommitted. No remote push.
+
+Next: Phase 2 - coordinator and comparison. Reply "go" to continue.
