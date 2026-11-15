@@ -61,17 +61,36 @@ function buildMap(data) {
   project = (node) => [offsetX + (node.x - minX) * scale, offsetY + (node.y - minY) * scale];
   for (const edge of data.edges) {
     const [x1, y1] = project(data.nodes[edge.a]), [x2, y2] = project(data.nodes[edge.b]);
-    $("roads").append(svg("line", { x1, y1, x2, y2, stroke: "#d1d8c6", "stroke-width": 8, "stroke-linecap": "round" }), svg("line", { x1, y1, x2, y2, stroke: edge.blocked ? "#bf5d49" : "#e7ebdf", "stroke-width": edge.blocked ? 5 : 4, "stroke-dasharray": edge.blocked ? "10 7" : "none" }));
+    $("roads").append(svg("line", { x1, y1, x2, y2, stroke: "#a9ad8b", "stroke-width": 9, "stroke-linecap": "round", opacity: .65 }), svg("line", { x1, y1, x2, y2, stroke: edge.blocked ? "#bf5d49" : "#e6d8b8", "stroke-width": edge.blocked ? 5 : 5.5, "stroke-dasharray": edge.blocked ? "10 7" : "none", "stroke-linecap": "round" }));
   }
-  for (const field of data.fields) {
+  const fieldShapes = [
+    "-63,-37 35,-44 64,-26 58,35 -43,42 -66,15",
+    "-58,-43 49,-36 65,9 43,41 -64,33",
+    "-62,-28 -27,-44 62,-36 66,28 14,43 -59,32",
+    "-65,-39 29,-42 61,-19 53,40 -49,36",
+    "-58,-38 58,-43 66,26 31,43 -65,30",
+    "-64,-34 11,-43 61,-28 57,37 -33,43 -66,18",
+    "-57,-42 58,-34 65,14 47,41 -62,35",
+    "-65,-27 -36,-43 62,-37 59,38 -47,42",
+  ];
+  const fieldColors = ["#b3bd79", "#a8b97a", "#c5bc79", "#9db775", "#b8b077", "#b9a17c", "#cabc7b", "#a4b781"];
+  for (const [index, field] of data.fields.entries()) {
     const [x, y] = project(field);
     const group = svg("g", { transform: `translate(${x} ${y})`, class: "field-node", "data-field": field.id });
-    const base = svg("rect", { x: -49, y: -31, width: 98, height: 62, rx: 6, fill: "#d5dfbc", stroke: "#a9bc8d", "stroke-width": 1.3, class: "field-base" });
-    const progress = svg("rect", { x: -47, y: -29, width: 0, height: 58, rx: 4, fill: "#9fbc7e" });
-    const label = svg("text", { x: 0, y: -3, "text-anchor": "middle", fill: "#4d6340", "font-size": 14, "font-weight": 700 }, field.id);
-    const percent = svg("text", { x: 0, y: 16, "text-anchor": "middle", fill: "#6f815b", "font-size": 10 }, "0% worked");
-    group.append(base, progress, svg("rect", { x: -47, y: -29, width: 94, height: 58, rx: 4, fill: "url(#furrows)", "pointer-events": "none" }), label, percent,
-      svg("text", { x: 0, y: 46, "text-anchor": "middle", fill: "#79876b", "font-size": 10 }, field.name));
+    const points = fieldShapes[index % fieldShapes.length];
+    const clipId = `field-boundary-${index}`;
+    const defs = svg("defs"), clip = svg("clipPath", { id: clipId });
+    clip.append(svg("polygon", { points })); defs.append(clip);
+    const base = svg("polygon", { points, fill: fieldColors[index % fieldColors.length], stroke: "#738359", "stroke-width": 2, "stroke-linejoin": "round", class: "field-base" });
+    const progress = svg("rect", { x: -68, y: -46, width: 0, height: 92, fill: "#608c47", opacity: .7 });
+    const planted = svg("g", { "clip-path": `url(#${clipId})`, "pointer-events": "none" });
+    planted.append(progress, svg("rect", { x: -68, y: -46, width: 136, height: 92, fill: field.name.toLowerCase().includes("orchard") ? "url(#orchard-rows)" : "url(#crop-rows)" }));
+    const label = svg("text", { x: 0, y: -3, "text-anchor": "middle", fill: "#34492b", "font-size": 14, "font-weight": 700 }, field.id);
+    const percent = svg("text", { x: 0, y: 12, "text-anchor": "middle", fill: "#526246", "font-size": 10 }, "0% worked");
+    group.append(defs, svg("polygon", { points, fill: "none", stroke: "#87986b", "stroke-width": 9, "stroke-linejoin": "round", opacity: .2, transform: "translate(1 3)", "pointer-events": "none" }), base, planted,
+      svg("polyline", { points: points.split(" ").slice(0, 3).join(" "), fill: "none", stroke: "#587442", "stroke-width": 4, "stroke-linecap": "round", "stroke-dasharray": "2 4", "pointer-events": "none" }),
+      svg("rect", { x: -37, y: -20, width: 74, height: 38, rx: 7, fill: "#fffdf0", opacity: .91, "pointer-events": "none" }), label, percent,
+      svg("text", { x: 0, y: 59, "text-anchor": "middle", fill: "#46573b", "font-size": 11, "font-weight": 600, class: "field-name" }, field.name));
     clickable(group, `${field.id}, ${field.name}`, () => select("field", field.id));
     $("fields").append(group); fieldElements.set(field.id, { group, progress, percent });
   }
@@ -269,7 +288,7 @@ function render(data) {
   if (document.activeElement !== $("speed")) $("speed").value = data.speed;
   for (const field of data.fields) {
     const element = fieldElements.get(field.id);
-    element.progress.setAttribute("width", Math.max(0, Math.min(94, field.progress * 94)));
+    element.progress.setAttribute("width", Math.max(0, Math.min(136, field.progress * 136)));
     element.percent.textContent = `${Math.round(field.progress * 100)}% worked`;
     element.group.classList.toggle("selected", selection?.kind === "field" && selection.id === field.id);
   }
